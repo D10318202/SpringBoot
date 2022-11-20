@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html 	xmlns="http://www.w3c.org/1999/xhtml"
+      	xmlns:th="http://www.thymeleaf.org"
+  		xmlns:f="http://java.sun.com/jsf/core"
+  		xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta charset="UTF-8">
+<title>Controller Test</title>
+</head>
+<body>
+1234567890<br>
+1234567890<hr>
+<h2 th:text="${carType}"></h2>
+<h2 th:text="${country}"></h2>
+
+<th:block th:with="a=5,b= 'red'">
+   <th:block th:if="${a == 5}">
+     <p>是5</p>
+   </th:block>   
+   <th:block th:if="${b == 'red'}"> 
+     <p>是紅色</p>
+   </th:block>
+   <th:block th:if="${a != 3}">
+     <p>不是3</p>
+   </th:block>
+    <th:block th:unless="${a == 2}">
+     <p>不是2</p>
+   </th:block>   
+</th:block>     
+</body>
+</html>   

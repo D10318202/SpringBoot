@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf</title>
+</head>
+<body>
+	<th:block th:with="a=1,b=2">
+		<th:block th:if="${a == 2 || b == 2}">
+			<p>OK的</p>
+		</th:block>
+	</th:block>
+
+	<th:block th:with="a=1">
+		<th:block th:if="${!(a == 2)}">
+			<p>OK的</p>
+		</th:block>
+	</th:block>
+
+	<th:block th:with="a=3">
+		<p th:text="${a == 3} ? p1 : p2"></p>
+		<p th:text="${a == 0} ? p1 : p2"></p>
+	</th:block>
+
+	<th:block th:with="a=2">
+		<th:block th:switch="${a}">
+			<p th:case="1" th:text="第1個"></p>
+			<p th:case="2" th:text="第2個"></p>
+			<p th:case="*" th:text="第4個"></p>
+		</th:block>
+	</th:block>
+</body>
+</html>

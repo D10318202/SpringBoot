@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta charset="UTF-8">
+<title>How To</title>
+</head>
+<body>
+	<div class="contents">
+		<h2>Messages Way</h2>
+		<p th:text="#{howto.title}"></p>
+		<p th:text="#{howto.message}"></p>
+	</div>
+
+	<h2>選擇物件</h2>
+	<table th:object="${user}">
+		<tr>
+			<th>名前</th>
+			<td th:text="*{name}"></td>
+		</tr>
+		<tr>
+			<th>年齡</th>
+			<td th:text="*{age}"></td>
+		</tr>
+	</table>
+</body>
+</html>

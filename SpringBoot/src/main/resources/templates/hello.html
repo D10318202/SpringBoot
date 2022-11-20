@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html 	xmlns="http://www.w3c.org/1999/xhtml"
+      	xmlns:th="http://www.thymeleaf.org"
+  		xmlns:f="http://java.sun.com/jsf/core"
+  		xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta charset="UTF-8">
+<title>Hello Thymeleaf</title>
+</head>
+<body>
+    <div th:unless="${click}">
+       <p th:text="${message}"></p>
+         <form method="post" action="/hello">
+            <input type="submit" value="Click"/>
+         </form>
+    </div>
+    <div th:if="${click}">
+       <p th:text="${afterClickMsg}"></p>
+       <input type="submit" value="Click" th:disabled="${click == true}"/>
+    </div>
+</body>
+</html>   

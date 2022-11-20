@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta charset="UTF-8">
+<title>Hello Thymeleaf</title>
+</head>
+<body>
+
+	<div>
+		<h1>[[${modelValue}]]</h1>
+	</div>
+
+	<div>
+		<div th:text="${hoge.publicField}"></div>
+		<div th:text="${hoge['publicField']}"></div>
+		<div th:text="${hoge.publicMethod()}"></div>
+		<div th:text="${hoge.publicValue}"></div>
+		<div th:text="${hoge['publicValue']}"></div>
+	</div>
+
+	<div>
+		<div th:text="${map.message}"></div>
+		<div th:text="${map['message']}"></div>
+	</div>
+	<div>
+		<div th:text="${list[0]}"></div>
+		<div th:text="${list[1]}"></div>
+		<div th:text="${list[2]}"></div>
+	</div>
+	
+	<div th:object="${hoge}">
+		<div>name = [[*{name}]]</div>
+		<div>value = [[*{value}]]</div>
+	</div>
+</body>
+</html>
+
+
+
+

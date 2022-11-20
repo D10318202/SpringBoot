@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta charset="UTF-8">
+<title>Hello Thymeleaf</title>
+</head>
+<body>
+	<div>
+		<span th:text="${#httpServiceRequest}"></span><br> 
+		<span th:text="${#httpSession}"></span><br> 
+		<span th:text="${param}"></span><br>
+		<span th:text="${session}"></span><br> 
+		<span th:text="${application}"></span>
+	</div>
+
+	<div>
+		<ul>
+			<li th:each="element: ${list}">[[${element}]]</li>
+		</ul>
+	</div>
+
+    <div>
+        <ul>
+           <li th:each="entry : ${map}">
+              key=[[${entry.key}]], value=[[${entry.value}]]
+           </li>
+        </ul>
+    </div>
+</body>
+</html>
